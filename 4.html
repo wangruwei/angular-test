@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.js"></script>
+	<script>
+	'use strict';
+	</script>
+</head>
+<body>
+	<ul ng-init="arr=[{'name':'chase','age':20},{'name':'eric','age':22},{'name':'blue','age':202},{'name':'alex','age':25}]">
+		<li ng-repeat="item in arr">我的名字叫{{item.name}},我今年{{item.age}}岁。</li>
+	</ul>
+</body>
+</html>

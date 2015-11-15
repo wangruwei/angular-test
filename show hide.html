@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div {
+		width: 200px;
+		height: 200px;
+		background: #0f9;
+	}
+	</style>
+	<script src="angular.js"></script>
+	<script>
+	'use strict';
+
+	</script>
+</head>
+<body ng-init="a=false">
+<input type="button" value="切换显示" ng-click="a=!a"/>
+<div ng-hide="a"></div>
+</body>
+</html>

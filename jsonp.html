@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="test">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.js"></script>
+	<script>
+	'use strict';
+	var app = angular.module('test',[]);
+	app.controller('main',function($scope,$http){
+		$scope.$watch('txt',function(){
+			$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',{params:{"wd":$scope.txt,"cb":"JSON_CALLBACK"}}).success(function(json){
+				$scope.arr = json.s;
+			}).error();
+		});
+	});
+	</script>
+</head>
+<body ng-controller="main">
+	<!-- https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&cb=show -->
+	<input type="text" ng-model="txt" />
+	<ul>
+		<li ng-repeat="item in arr">{{item}}</li>
+	</ul>
+</body>
+</html>

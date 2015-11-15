@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="test">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.js"></script>
+	<script>
+	'use strict';
+	var app = angular.module('test',[]);
+	app.controller('abc',function($scope,$http){
+		$http.get('a.txt',{params:{}}).success(function(str){
+			$scope.arr = str;
+		}).error();
+		$scope.alert = function(){
+			alert($scope.arr);
+		};
+	});
+	</script>
+</head>
+<body ng-controller="abc">
+	<input type="button" value="点我" ng-click="alert()"/>
+	<ul>
+		<li ng-repeat="item in arr">{{item}}</li>
+	</ul>
+</body>
+</html>
